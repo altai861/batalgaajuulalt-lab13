@@ -4,6 +4,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class DivisionTest {
+    @Test
+    public void testDivision() {
+        Division d =  new Division();
+        assertNotNull(d, "Division object should be created successfully");
+
+    }
+
 
     @Test
     public void testNormalDivision() {
