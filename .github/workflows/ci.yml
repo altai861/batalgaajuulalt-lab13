@@ -1,0 +1,26 @@
+name: CI Process
+on:
+  push:
+    branches:
+      - develop
+      - release/*
+  pull_request:
+    branches:
+      - develop
+      - release/*
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: JDK 17 tohiruulah
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Checkstyle shalgah
+        run: mvn checkstyle:check
+      - name: JUnit Test ba JaCoCo Coverage shalgah
+        run: mvn test jacoco:check
+      - name: JaCoCo tailan uusgeh
+        run: mvn jacoco:report
