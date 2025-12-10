@@ -16,7 +16,7 @@ jobs:
       - name: JDK 17 tohiruulah
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '19'
           distribution: 'temurin'
       - name: Checkstyle shalgah
         run: mvn checkstyle:check
